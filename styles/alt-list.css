@@ -138,6 +138,13 @@
   opacity: 0;
 }
 
+.list-image {
+  border-radius: 30px;
+  max-height: 175px;
+  /* border: 2px solid var(--medium-slate-blue); */
+}
+
+
 @media screen and (min-width: 1440px) {
   .carousel-txt-list {
     max-height: unset;

@@ -165,6 +165,8 @@ img {
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.6;
+  max-width: 770px;
+
 }
 
 .quote-item {
@@ -216,6 +218,10 @@ img {
   display: flex;
   position: absolute;
   inset: 0%;
+}
+
+.list-image {
+  display: none;
 }
 
 @media screen and (min-width: 1440px) {
