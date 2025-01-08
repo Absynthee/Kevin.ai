@@ -1,0 +1,8 @@
+# gitignore
+# Ignore all files in this directory
+
+.env
+node_modules
+dist
+coverage
+js/GSAP
