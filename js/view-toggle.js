@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let isMainView = true;
 
         // Add media query listener
-        const mediaQuery = window.matchMedia('(max-width: 600px)');
+        const mediaQuery = window.matchMedia('screen and (max-width: 50px)');
+        // match mobile screens
 
         // Handler function for viewport changes
         function handleViewportChange(e) {
@@ -43,7 +44,6 @@ function resetCarouselDescriptions() {
     const activeIndex = items.findIndex(item => item.classList.contains('active'));
     
     // If there is an active item, show its corresponding description
-    console.log("Active index:", activeIndex);
     // Otherwise fallback to the first description
     const indexToShow = activeIndex !== -1 ? activeIndex : 0;
     gsap.set(descriptions[indexToShow], { autoAlpha: 1 });

@@ -264,7 +264,7 @@ img {
   }
 
   .project-links {
-    gap: 150px !important;
+    gap: 150px;
     font-size: 0.9rem;
   }
 }
@@ -294,7 +294,7 @@ img {
   }
 
   .project-links {
-    gap: 150px !important;
+    gap: 150px;
     font-size: 0.9rem;
   }
 }
@@ -321,6 +321,36 @@ img {
   }
 
   .project-links {
-    gap: 100px !important;
+    gap: 100px;
   }
+}
+
+@media only screen and (max-device-width: 460px) {
+  .container.carousel {
+    max-width: calc(90dvh - 350px);
+    min-width: 380px;
+  }  
+
+  .project-name {
+    font-size: 1.4rem;
+  }
+
+
+  .project-item .project-img {
+    width: 60px;
+    height: 60px;
+  }
+  .project-links {
+    gap: 80px;
+  }
+}
+
+@media only screen and (max-device-width: 420px) {
+  .project-desc {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
 }

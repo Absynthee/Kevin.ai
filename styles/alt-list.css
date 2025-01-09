@@ -181,11 +181,8 @@
     padding-right: 32px;
     display: flex;
   }
-
-  .project-desc {
-    margin-bottom: 16px;
-  }
 }
+
 @media screen and (max-width: 767px) {
   .cms-desc {
     padding-inline: 20px;
@@ -196,6 +193,11 @@
     border-radius: 25px;
   }
 
+  .project-name {
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+  }
+
   .project-links {
     gap: 150px;
     flex-wrap: nowrap;
@@ -203,8 +205,13 @@
 }
 
 @media screen and (max-width: 600px) {
+  .list-text {
+    gap: 14px;
+  }
+
   .project-name {
     font-size: 1.5rem;
+    line-height: 1.5rem;
   }
 
   .project-desc {
@@ -231,5 +238,46 @@
 @media screen and (orientation: landscape) {
   .project-name {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (max-device-width: 460px) {
+  .cms-desc {
+    padding-block: 10px;
+    padding-inline: 10px;
+    gap: 12px;
+    border-radius: 30px;
+
+  }
+
+  .list-image {
+    width: 92px;
+    margin-left: 0px;
+    border-radius: 22px;
+    padding-top: 2px;
+    align-self: start;
+  }
+
+  .list-text {
+    gap: 10px;
+  }
+
+  .project-name {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .project-desc {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 15px;
+  }
+
+  .project-links {
+    font-size: 0.9rem;
   }
 }
