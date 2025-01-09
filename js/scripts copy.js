@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
 let descriptions = gsap.utils.toArray(".carousel-txt-list .cms-desc");
-let items = gsap.utils.toArray(".quote-list .quote-item");
+let items = gsap.utils.toArray(".project-list .project-item");
 let projectImages = document.getElementById('slider-wrap');
 let radius = projectImages.offsetWidth / 2;
 

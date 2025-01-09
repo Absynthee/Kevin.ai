@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize variables for the descriptions, items, and carousel wrapper
   let descriptions = gsap.utils.toArray(".carousel-txt-list .cms-desc");
-  let items = gsap.utils.toArray(".quote-list .quote-item");
+  let items = gsap.utils.toArray(".project-list .project-item");
   let projectImages = document.getElementById("slider-wrap");
   let radius = projectImages ? projectImages.offsetWidth / 2 : 0;
 
@@ -14,9 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
     carousel.resize(radius, radius);
   });
 
-  // Make the first description visible
+  // Function to show the description of the currently active parent .project-item
+  function showActiveDescription() {
+    const activeItem = document.querySelector(".project-item.active");
+    if (activeItem) {
+      const activeDesc = activeItem.querySelector(".cms-desc");
+      if (activeDesc) {
+        gsap.set(activeDesc, { autoAlpha: 1 });
+      }
+    }
+  }
+
+  // Hide all descriptions initially
   gsap.set(descriptions, { autoAlpha: 0 });
-  gsap.set(descriptions[0], { autoAlpha: 1 });
+  // Show the description of the currently active parent .project-item
+  showActiveDescription();
 
   // Build the carousel with custom options
   let carousel = buildCarousel(items, {
@@ -36,9 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     onActivate(element, self) {
       element.classList.add("active"); // Add 'active' class when item is selected
+      // Show the description of the newly activated item
+      showActiveDescription();
     },
     onDeactivate(element, self) {
       element.classList.remove("active"); // Remove 'active' class when item is deactivated
+      // Hide the description of the deactivated item
+      const desc = element.querySelector(".cms-desc");
+      if (desc) {
+        gsap.set(desc, { autoAlpha: 0 });
+      }
     },
     onStart(element, self) {
       // Hide description of the current item when dragging starts
@@ -301,4 +320,15 @@ document.addEventListener("DOMContentLoaded", function () {
     self.activeElement(gsap.utils.toArray(activeElement)[0] || targets[0]);
     return self;
   }
+});
+
+// add event listener to project-desc to show full description on click and hide on click
+document.querySelectorAll(".project-desc").forEach((el) => {
+  el.addEventListener("click", () => {
+    if (document.body.classList.contains("list-view-active")) {
+      el.classList.toggle("show-full");
+    } else {
+      el.classList.remove("show-full");
+    }
+  });
 });

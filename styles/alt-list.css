@@ -16,13 +16,7 @@
   position: relative;
 }
 
-.quote-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.quote-item-inner {
+.project-item-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -37,11 +31,11 @@
   opacity: 0.1;
 }
 
-.quote-list-wrap {
+.project-list-wrap {
   display: none;
 }
 
-.quote-arrows {
+.project-arrows {
   display: none;
 }
 
@@ -52,7 +46,7 @@
   border: 1px solid var(--dim-grey);
   border-radius: 50px;
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   max-width: 1200px;
@@ -60,7 +54,7 @@
   margin-right: auto;
   inset: 0%;
   gap: 25px;
-  padding-block: 30px;
+  padding-block: 25px;
   padding-inline: 25px;
   pointer-events: all;
   cursor: pointer;
@@ -73,24 +67,46 @@
   }
 }
 
-.quote-name {
-  font-size: 2rem;
-  font-weight: 600;
+.list-image {
+  border-radius: 41px;
+  max-height: 180px;
+  /* border: 2px solid var(--medium-slate-blue); */
+  transition: all 0.3s ease;
 }
 
-.quote-desc {
+.list-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+
+.project-name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.project-desc {
   margin-top: unset;
   font-size: 1rem;
   line-height: 1.6;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.quote-links {
+.project-links {
+  justify-content: flex-start;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 0px;
 }
 
-.quote-item {
+.project-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +114,7 @@
   position: relative;
 }
 
-.quote-list {
+.project-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -107,7 +123,7 @@
   gap: 20px;
 }
 
-.quote-item-child {
+.project-item-child {
   position: relative;
 }
 
@@ -121,15 +137,16 @@
 
 .carousel-txt-list-wrap {
   overflow: revert;
+  margin-bottom: 5rem;
 }
 
-.quote-dots {
+.project-dots {
   opacity: 0;
   scale: 100%;
   overflow: hidden;
 }
 
-.quote-dots-wrap {
+.project-dots-wrap {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -138,40 +155,22 @@
   opacity: 0;
 }
 
-.list-image {
-  border-radius: 30px;
-  max-height: 175px;
-  /* border: 2px solid var(--medium-slate-blue); */
-}
-
-
 @media screen and (min-width: 1440px) {
   .carousel-txt-list {
     max-height: unset;
   }
 }
 
-@media screen and (max-width: 991px) {
-  h1 {
-    font-size: 50px;
-    line-height: 58px;
+@media screen and (min-width: 820px) {
+  .list-image {
+    max-height: 200px;
   }
-  h2 {
-    font-size: 40px;
-    line-height: 47px;
-  }
-  img {
-    max-height: 100%;
-  }
+}
 
+@media screen and (max-width: 991px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .quote-img {
-    width: 64px;
-    height: 64px;
   }
 
   .carousel-overflow {
@@ -183,49 +182,37 @@
     display: flex;
   }
 
-  .quote-desc {
+  .project-desc {
     margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 767px) {
-  h1 {
-    font-size: 30px;
-    line-height: 38px;
-  }
-  h2 {
-    font-size: 25px;
-    line-height: 37px;
-  }
-
-  .svg-embed {
-    top: 0px;
-  }
-
-  .quote-prev,
-  .quote-next {
-    width: 40px;
-    height: 40px;
-  }
-
-  .quote-arrows {
-    grid-row-gap: 48px;
-  }
-
   .cms-desc {
-    max-width: 100vw;
-    padding-left: 32px;
-    padding-right: 32px;
-    top: 00%;
+    padding-inline: 20px;
+  }
+
+  .list-image {
+    max-height: 120px;
+    border-radius: 25px;
+  }
+
+  .project-links {
+    gap: 150px;
+    flex-wrap: nowrap;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .quote-name {
+  .project-name {
     font-size: 1.5rem;
   }
 
-  .quote-desc {
+  .project-desc {
     font-size: 0.875rem;
+  }
+
+  .project-links {
+    gap: 100px;
   }
 }
 
@@ -233,5 +220,16 @@
   .carousel-overflow {
     margin-top: 16px;
     padding-top: 140px;
+  }
+
+  .project-links {
+    gap: 80px;
+  }
+}
+
+/* For landscape orientation */
+@media screen and (orientation: landscape) {
+  .project-name {
+    font-size: 2rem;
   }
 }
