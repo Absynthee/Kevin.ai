@@ -25,6 +25,8 @@
   /* Dark theme (default) */
 
   --bg-color: hsl(252, 67%, 5%);
+  --bg-color-2: hsl(253, 49%, 8%);
+  --bg-color-3: hsl(223, 62%, 65%);
   --bg-color-alpha: hsla(252, 67%, 5%, 0.5);
 
   --text-color: hsl(0, 0%, 100%);
@@ -50,6 +52,8 @@
 
 :root.light-theme {
   --bg-color: hsla(0, 0%, 100%, 1);
+  --bg-color-2: hsl(218, 100%, 98%);
+  --bg-color-3: hsl(223, 100%, 94%);
   --text-color: hsl(0, 0%, 0%);
   --button-bg: rgba(0, 0, 0, 0.1);
   --button-hover-bg: rgba(0, 0, 0, 0.2);
@@ -516,12 +520,25 @@ footer {
   display: flex;
   flex-direction: column;
   height: 250px;
-  color: var(--bg-color);
-  background-color: var(--text-color);
+  color: var(--text-color);
+  background-color: var(--bg-color-2);
+  border-top: 2px dashed var(--bg-color-3);
   text-align: center;
   padding: 50px;
   margin-top: auto; /* Remove 'auto' from the right side */
   flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+
+  #kittycode {
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    justify-content: center;
 }
 
 .list-text .show-full {
