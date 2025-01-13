@@ -22,15 +22,15 @@
 
     <header>
       <h1 class="title">Kevin.AI</h1>
-      <nav>
-        <div class="header-buttons">
-          <button class="circle-button" id="view-toggle" aria-label="Toggle View">
-            <i class="view-icon">📜</i>
-          </button>
-          <button class="circle-button" id="theme-toggle" aria-label="Toggle Theme">
-            <i class="theme-icon">🌙</i>
-          </button>
-        </div>
+      <div class="header-buttons">
+        <button class="circle-button" id="view-toggle" aria-label="Toggle View">
+          <i class="view-icon">📜</i>
+        </button>
+        <button class="circle-button" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="theme-icon">🌙</i>
+        </button>
+      </div>
+      <nav id="sticky-nav" class="" role="navigation">
 
         <ul>
           <li><a href="#">home</a></li>
@@ -273,6 +273,7 @@
       <!-- scripts -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/Draggable.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
       <script src="js/GSAP/InertiaPlugin.min.js"></script>
 
     </section>
