@@ -1,30 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 gsap.registerPlugin(Draggable, InertiaPlugin, ScrollTrigger);
 
-// Create the sticky nav effect
-ScrollTrigger.create({
-  trigger: "#sticky-nav",
-  start: "top top",
-  endTrigger: "footer", 
-  end: "bottom top",
-  pin: true,
-  pinSpacing: false
-});
-
-gsap.to("#sticky-nav", {
-  scrollTrigger: {
-    trigger: "#sticky-nav",
-    start: "top top",
-    toggleActions: "play none none reverse",
-  },
-  paddingTop: "20px", 
-  background: "rgba(0, 0, 0, 0.2)",
-  backdropFilter: "blur(8px)",
-  duration: 0.5,
-  ease: "power2.inOut"
-});
-
-
   // Initialize variables for the descriptions, items, and carousel wrapper
   let descriptions = gsap.utils.toArray(".carousel-txt-list .cms-desc");
   let items = gsap.utils.toArray(".project-list .project-item");
