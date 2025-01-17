@@ -10,6 +10,7 @@ export default defineConfig({
     vite: {
         assetsInclude: ['**/*.Astro'],
       },	
-    site: 'https://example.com',
+    site: 'https://absynthee.github.io',
+    base: 'Kevin.ai',
     integrations: [mdx(), sitemap(), tailwind()],
 });
