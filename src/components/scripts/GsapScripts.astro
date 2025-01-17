@@ -1,0 +1,19 @@
+---
+// GsapScripts.astro
+---
+
+<!-- Load GSAP core first -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Load GSAP plugins after core -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script is:inline src="/js/gsap/InertiaPlugin.min.js"></script>
+
+<!-- Initialize GSAP -->
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(Draggable, ScrollTrigger, InertiaPlugin);
+  });
+</script>
+

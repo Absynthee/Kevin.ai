@@ -1,0 +1,283 @@
+.container {
+  max-width: 1540px;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.project-carousel-wrap {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: unset;
+  display: block;
+  position: relative;
+}
+
+.project-item-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.svg-embed {
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.1;
+}
+
+.project-list-wrap {
+  display: none;
+}
+
+.project-arrows {
+  display: none;
+}
+
+.cms-desc {
+  z-index: 0;
+  opacity: 0;
+  display: flex;
+  border: 1px solid var(--dim-grey);
+  border-radius: 50px;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  inset: 0%;
+  gap: 25px;
+  padding-block: 25px;
+  padding-inline: 25px;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1px solid var(--medium-slate-blue);
+    box-shadow: 0px 0 100px -50px var(--medium-slate-blue-alpha) inset,
+      0px 0 100px -30px var(--deep-sky-blue);
+  }
+}
+
+.list-image {
+  border-radius: 41px;
+  max-height: 180px;
+  /* border: 2px solid var(--medium-slate-blue); */
+  transition: all 0.3s ease;
+}
+
+.list-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+
+.project-name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.project-desc {
+  margin-top: unset;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project-links {
+  justify-content: flex-start;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.project-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-item-child {
+  position: relative;
+}
+
+.carousel-txt-list {
+  overflow: revert;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.carousel-txt-list-wrap {
+  overflow: revert;
+  margin-bottom: 5rem;
+}
+
+.project-dots {
+  opacity: 0;
+  scale: 100%;
+  overflow: hidden;
+}
+
+.project-dots-wrap {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  inset: 0%;
+  opacity: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .carousel-txt-list {
+    max-height: unset;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .list-image {
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .carousel-overflow {
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cms-desc {
+    padding-inline: 20px;
+  }
+
+  .list-image {
+    max-height: 120px;
+    border-radius: 25px;
+  }
+
+  .project-name {
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+  }
+
+  .project-links {
+    gap: 150px;
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .list-text {
+    gap: 14px;
+  }
+
+  .project-name {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+  }
+
+  .project-links {
+    gap: 100px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .carousel-overflow {
+    margin-top: 16px;
+    padding-top: 140px;
+  }
+
+  .project-links {
+    gap: 80px;
+  }
+}
+
+/* For landscape orientation */
+@media screen and (orientation: landscape) {
+  .project-name {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-device-width: 460px) {
+  .cms-desc {
+    padding-block: 10px;
+    padding-inline: 10px;
+    gap: 12px;
+    border-radius: 30px;
+
+  }
+
+  .list-image {
+    width: 92px;
+    margin-left: 0px;
+    border-radius: 22px;
+    padding-top: 2px;
+    align-self: start;
+  }
+
+  .list-text {
+    gap: 10px;
+  }
+
+  .project-name {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .project-desc {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 15px;
+  }
+
+  .project-links {
+    font-size: 0.9rem;
+  }
+}

@@ -493,11 +493,7 @@ footer {
   justify-content: center;
 }
 
-.list-text .show-full {
-  line-clamp: unset;
-  -webkit-line-clamp: unset;
-  transition: all 0.3s ease;
-}
+
 
 .sticky {
   position: fixed !important;
@@ -564,4 +560,10 @@ footer {
   .circle-button i {
     font-size: 1rem;
   }
+}
+
+.show-full {
+  line-clamp: unset;
+  -webkit-line-clamp: 99 !important;
+  transition: all 0.3s ease;
 }

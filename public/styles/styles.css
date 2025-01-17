@@ -173,6 +173,7 @@ img {
   display: flex;
   position: absolute;
   inset: 0%;
+  overflow: hidden;
 }
 
 .list-image {
@@ -335,11 +336,11 @@ img {
     font-size: 1.4rem;
   }
 
-
   .project-item .project-img {
     width: 60px;
     height: 60px;
   }
+
   .project-links {
     gap: 80px;
   }
@@ -352,5 +353,9 @@ img {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
+}
 
+/* Transition styles */
+.view-switching {
+    transition: all 0.3s ease;
 }
