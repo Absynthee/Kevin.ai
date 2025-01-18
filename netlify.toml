@@ -1,8 +1,9 @@
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
+
 [build.environment]
-  TINA_CLIENT_ID = "${TINA_CLIENT_ID}"
-  TINA_TOKEN = "${TINA_TOKEN}"
-[build.processing.html]
-  pretty_urls = false
+  NODE_VERSION = "18"
+  # Remove these lines - we'll set them only in the Netlify UI
+  # TINA_CLIENT_ID = "${TINA_CLIENT_ID}"
+  # TINA_TOKEN = "${TINA_TOKEN}"
