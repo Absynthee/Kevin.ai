@@ -1,7 +1,7 @@
 ---
 pubDate: Jul 08 2022
 heroImage: /blog-placeholder-3.jpg
-title: First post
+title: How many characters can this title be before it overflows or wraps
 date: 2025-01-02T00:00:00.000Z
 description: Lorem ipsum dolor sit amet
 ---

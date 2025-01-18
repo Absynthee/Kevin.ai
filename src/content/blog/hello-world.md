@@ -1,5 +1,9 @@
 ---
 title: Hello, World!
+pubDate: 'Jul 15 2022'
+description: 'Lorem ipsum dolor sit amet'
+heroImage: '/blog-placeholder-4.jpg'
+
 ---
 
 ## Hello World!

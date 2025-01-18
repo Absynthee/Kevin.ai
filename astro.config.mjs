@@ -11,6 +11,6 @@ export default defineConfig({
         assetsInclude: ['**/*.Astro'],
       },	
     site: 'https://absynthee.github.io',
-    base: 'Kevin.ai',
+    // base: 'Kevin.ai',
     integrations: [mdx(), sitemap(), tailwind()],
 });
