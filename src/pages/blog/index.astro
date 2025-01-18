@@ -1,132 +1,219 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
 import Scripts from "../../components/Scripts.astro";
-import ToggleTheme from '../../components/ToggleTheme.astro';
-import ToTop from '../../components/ToTop.astro';
+import ToggleTheme from "../../components/ToggleTheme.astro";
+import ToTop from "../../components/ToTop.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<Scripts />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <Scripts />
 
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
+    <style>
+      main {
+        max-width: 1240px;
+        justify-content: center;
+        width: 100%;
+        align-content: center;
+        margin: 0 auto;
+        padding-bottom: 5rem;
+      }
 
-	<body class="bg-dot">
-		<Header />
-		<ToggleTheme />
+      .blog-list {
+        padding-inline: 2rem;
+      }
 
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-			<ToTop />
-		</main>
-		<Footer />
-	</body>
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        width: calc(50% - 1rem);
+      }
+
+      ul li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+
+      ul li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      ul li:first-child img {
+        width: 100%;
+      }
+
+      ul li:first-child .blog-title {
+        font-size: 2.369rem;
+      }
+
+      ul li img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+        object-fit: cover;
+        background-position: center;
+        aspect-ratio: 2/1;
+      }
+
+      ul li a {
+        display: block;
+      }
+
+      h4 {
+        font-size: 2rem;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .date-category {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      ul li:first-child .date-category,
+      ul li:first-child .blog-tags {
+        justify-content: center;
+      }
+
+      .blog-tags {
+        font-size: 0.875rem;
+      }
+
+      ul li a:hover h4,
+      ul li a:hover .date-category {
+        color: (var(--medium-slate-blue));
+      }
+
+      ul a:hover img {
+        box-shadow: var(--box-shadow);
+      }
+
+      @media (max-width: 720px) {
+        ul {
+          gap: 0.5em;
+        }
+
+        ul li {
+          width: 100%;
+          text-align: center;
+        }
+
+        ul li:first-child {
+          margin-bottom: 0;
+        }
+
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+      }
+
+      .blog-tags {
+        display: inline-flex;
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+
+      .blog-tags a {
+        display: inline;
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      .blog-tags a:hover {
+        text-decoration: underline;
+      }
+
+      .blog-category {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      .blog-category:hover {
+        text-decoration: underline;
+      }
+
+      .blog-tags a {
+      }
+    </style>
+  </head>
+
+  <body class="bg-dot">
+    <Header />
+    <ToggleTheme />
+
+    <main>
+      <section class="blog-list">
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <a href={`/blog/${post.id}/`}>
+                  <img
+                    width={720}
+                    height={360}
+                    src={post.data.heroImage}
+                    alt=""
+                  />
+                  <h4 class="blog-title">{post.data.title}</h4>
+                </a>
+                <p class="date-category">
+                  <FormattedDate date={post.data.pubDate} />
+                  {post.data.category && (
+                    <>
+                      <span class="separator"> | </span>
+                      <a
+                        href={`/blog/category/${post.data.category?.toLowerCase().replace(/\s+/g, "-")}`}
+                        class="blog-category"
+                      >
+                        {post.data.category}
+                      </a>
+                    </>
+                  )}
+                </p>
+
+                <p class="blog-tags">
+                  {post.data.tags?.length ? (
+                    post.data.tags.map((tag, index) => (
+                      <>
+                        <a
+                          href={`/blog/tag/${tag?.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          {tag}
+                        </a>
+                        {index < post.data.tags.length - 1 && " - "}
+                      </>
+                    ))
+                  ) : (
+                    <span>No tags available</span>
+                  )}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <ToTop />
+    </main>
+    <Footer />
+  </body>
 </html>
-
-<style>
-	main {
-		width: 960px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  align-content: center;
-  margin: 0 auto;
-padding-bottom: 5rem;
-	}
-</style>

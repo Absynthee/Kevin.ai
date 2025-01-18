@@ -1,14 +1,14 @@
 ---
-title: a title be here
-pubDate: July 18 2025
-description: 'The description should show somewhere, don''t you think?'
+title: 😼 First Blog Title 😼
+pubDate: 2025-12-18T00:00:00.000Z
+description: 'You call this a description?'
 heroImage: /images/kevin2.png
+category: Category
+tags:
+  - TAG ONE
+  - TAG TWO
+  - TAG THREE
 ---
 
-# Heading 1
+Look ma I'm in the future! 😼
 
-## Heading 2
-
-### Heading 3
-
-Tina CMS upload test
