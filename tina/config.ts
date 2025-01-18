@@ -18,6 +18,8 @@ export default defineConfig({
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
+    // title, pubDate, description, heroImage, body
+    // category, tags
     collections: [
       {
         name: "post",
@@ -38,7 +40,7 @@ export default defineConfig({
             required: true,
             ui: {
               dateFormat: "MMM DD YYYY",
-              // Jul 08 2022
+              // I.E. Jul 08 2022
             },
           },
           {
@@ -56,7 +58,18 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
-          }
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+          },
         ],
       },
     ],
