@@ -33,15 +33,13 @@ export default defineConfig({
           },
           {
             type: "datetime",
-            name: "date",
+            name: "pubDate",
             label: "Date",
             required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            ui: {
+              dateFormat: "MMM DD YYYY",
+              // Jul 08 2022
+            },
           },
           {
             type: "string",
@@ -50,8 +48,14 @@ export default defineConfig({
           },
           {
             type: "image",
-            name: "image",
+            name: "heroImage",
             label: "Featured Image",
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
           }
         ],
       },

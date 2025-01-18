@@ -1,6 +1,6 @@
 ---
 title: a title be here
-date: 2025-01-18T00:00:00.000Z
+pubDate: July 18 2025
 description: 'The description should show somewhere, don''t you think?'
 image: /kevin2.png
 ---
