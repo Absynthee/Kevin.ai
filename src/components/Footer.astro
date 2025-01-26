@@ -1,11 +1,18 @@
 ---
 import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()} {SITE_TITLE}. All rights reserved.
+
+	<div class="footer-links" role="navigation">
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/blog">Blog</HeaderLink>
+	</div>
+
 
 	<p id="kittycode">Designed by <a href="https://www.kittycodecreative.com/" target="_blank">KittyCode
 		Creative</a> <img width="32px" src="https://www.kittycodecreative.com/images/kittycode_logo.svg"

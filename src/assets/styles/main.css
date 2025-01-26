@@ -93,6 +93,7 @@ header {
 a {
   text-decoration: none;
   color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 a:active,
@@ -508,6 +509,14 @@ footer {
   padding: 50px;
   margin-top: auto; /* Remove 'auto' from the right side */
   flex-shrink: 0; /* Prevents the footer from shrinking */
+  transition: all 0.3s ease;
+}
+
+.footer-links {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  margin-block: 1rem;
 }
 
 #kittycode {
@@ -517,8 +526,7 @@ footer {
   align-items: center;
   display: flex;
   gap: 5px;
-  margin-top: 32px;
-  margin-bottom: 12px;
+  margin-block: 1rem;
   justify-content: center;
 }
 
@@ -552,8 +560,8 @@ footer {
 
   .project-desc {
     display: -webkit-box;
-    line-clamp: 7;
-    -webkit-line-clamp: 7;
+    line-clamp: 10;
+    -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -575,6 +583,12 @@ footer {
   .internal-links {
     gap: 9.2rem;
   }
+
+  .project-desc {
+    line-clamp: 6;
+    -webkit-line-clamp: 6;
+    line-height: 1.4;
+  }
 }
 
 @media (max-width: 768px) {
@@ -590,6 +604,18 @@ footer {
 
   .circle-button i {
     font-size: 1rem;
+  }
+
+  #to-top-button {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1rem;
+  }
+
+  #view-toggle {
+    transform-origin: top;
+    transform: translate(58px, 58px);
+    transition: all 0.3s ease;
   }
 }
 
