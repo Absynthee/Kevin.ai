@@ -1,8 +1,10 @@
 ---
-title: "Markdown Style Guide"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jun 19 2024"
-heroImage: "/blog-placeholder-1.jpg"
+title: Markdown Style Guide
+pubDate: 2024-06-19T00:00:00.000Z
+description: >-
+  Here is a sample of some basic Markdown syntax that can be used when writing
+  Markdown content in Astro.
+heroImage: /blog-images/blog-placeholder-1.jpg
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -39,7 +41,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ### Output
 
-![blog placeholder](/blog-placeholder-about.jpg)
+![blog placeholder](/blog-images/blog-placeholder-about.jpg "Jedo-chibi")
 
 ## Blockquotes
 
@@ -56,8 +58,8 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Output
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.\
+> **Note** that you can use *Markdown syntax* within a blockquote.
 
 ## Tables
 
@@ -73,13 +75,13 @@ The blockquote element represents content that is quoted from another source, op
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| *italics* | **bold** | `code` |
 
 ## Code Blocks
 
 ### Syntax
 
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+we can use 3 backticks \`\`\` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
 
 ````markdown
 ```html
@@ -141,9 +143,9 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 #### Output
 
-- List item
-- Another item
-- And another item
+* List item
+* Another item
+* And another item
 
 ### Nested list
 
@@ -161,13 +163,13 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 #### Output
 
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+* Fruit
+  * Apple
+  * Orange
+  * Banana
+* Dairy
+  * Milk
+  * Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
