@@ -74,6 +74,9 @@ header {
   --dot-color: hsl(240, 8%, 14%);
   --dot-mask-color: hsl(0, 0%, 0%);
 
+  interpolate-size: allow-keywords; /* 👈 */
+
+
   ::selection {
     background-color: var(--medium-slate-blue-alpha);
     color: var(--black);
@@ -108,8 +111,8 @@ strong {
 }
 
 mark {
-  color: #000;
-  background: #ff0;
+  color: var(--text-color);
+  background: var(--medium-slate-blue-alpha);
 }
 
 small {
@@ -474,6 +477,7 @@ header a,
   width: 4.2rem;
   height: 4.2rem;
   font-size: 1.8rem;
+  transition: all 0.3s ease;
 }
 
 header {
@@ -623,4 +627,9 @@ footer {
   line-clamp: 50 !important;
   -webkit-line-clamp: 50 !important;
   transition: all 1.2s ease-in-out;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 10px;
 }

@@ -120,6 +120,12 @@ const posts = (await getCollection("blog")).sort(
         box-shadow: var(--box-shadow);
       }
 
+      @media (max-width: 820px) {
+        .blog-list {
+          padding-inline: 0rem;
+        }
+      }
+
       @media (max-width: 720px) {
         ul {
           gap: 0.5em;

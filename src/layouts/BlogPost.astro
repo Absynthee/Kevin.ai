@@ -26,6 +26,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         margin: 0 auto;
         padding-bottom: 5rem;
       }
+
       .blog-post {
         padding-inline: 2rem;
       }
@@ -39,6 +40,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         width: 100%;
         margin: 0 auto;
       }
+
       .hero-image img {
         display: flex;
         margin: auto;
@@ -47,41 +49,48 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         background-position: center;
         aspect-ratio: 2/1;
       }
+
       .prose {
         width: 800px;
         max-width: calc(100% - 2em);
         margin: auto;
         padding: 1em;
       }
+
       .blog-title {
         margin-bottom: 1em;
         padding: 1em 0;
         text-align: center;
         line-height: 1;
       }
+
       .blog-title h1 {
         margin: 0 0 0.5em 0;
       }
+
       .date {
         margin-bottom: 0.5em;
       }
+
       .last-updated-on {
         font-style: italic;
       }
+
       .blog-description {
         font-size: 1.2rem;
         font-style: italic;
       }
+
       p {
         font-size: 1.1rem;
         line-height: 1.5;
       }
 
       @media (max-width: 820px) {
-
         .blog-title h1 {
           font-size: 3rem;
         }
+
         .blog-post {
           padding-inline: 0rem;
         }
@@ -92,6 +101,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           width: unset;
           max-width: unset;
         }
+        
         .blog-title h1 {
           font-size: 2.6rem;
         }
@@ -107,15 +117,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       <main>
         <article class="blog-post">
           <a class="backlink" href="..">
-            <div class="circle-button"
-            id="back-button"
-        aria-label="Go Back to Blogs">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>          </div>
-        </a>
+            <div
+              class="circle-button"
+              id="back-button"
+              aria-label="Go Back to Blogs"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-left"
+                ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+              >
+            </div>
+          </a>
           <div class="hero-image">
             {
               heroImage && (
-                <img width={1020} height={510} src={heroImage} alt="" />
+                <img width={760} height={380} src={heroImage} alt="" />
               )
             }
           </div>
