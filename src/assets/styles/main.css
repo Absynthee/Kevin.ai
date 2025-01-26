@@ -39,6 +39,14 @@
   }
 }
 
+@view-transition {
+  nagivation: auto;
+}
+
+header {
+  view-transition-name: header;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -504,7 +512,7 @@ footer {
 
 #kittycode {
   font-size: 0.8rem;
-  font-weight: 500;
+  /* font-weight: 500; */
   cursor: pointer;
   align-items: center;
   display: flex;

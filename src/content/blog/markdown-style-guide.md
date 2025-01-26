@@ -4,7 +4,7 @@ pubDate: 2024-06-19T00:00:00.000Z
 description: >-
   Here is a sample of some basic Markdown syntax that can be used when writing
   Markdown content in Astro.
-heroImage: /blog-images/blog-placeholder-1.jpg
+heroImage: /blog-placeholder-1.jpg
 category: Markdown
 ---
 
@@ -42,7 +42,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ### Output
 
-![chibi-jedo](/blog-images/blog-images/kevin2.png)
+![chibi-jedo](/blog-images/kevin2.png)
 
 ## Blockquotes
 
