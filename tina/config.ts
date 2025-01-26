@@ -12,7 +12,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "blog-images",
       publicFolder: "public",
     },
   },
