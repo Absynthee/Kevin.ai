@@ -30,8 +30,20 @@ const posts = (await getCollection("blog")).sort(
         padding-bottom: 5rem;
       }
 
+      .blog-title {
+        color: var(--text-color);
+        padding: 10px;
+        &:hover {
+          color: var(--medium-slate-blue);
+        }
+      }
+
       .blog-list {
         padding-inline: 2rem;
+      }
+
+      p {
+        margin-bottom: 0;
       }
 
       ul {
@@ -152,7 +164,8 @@ const posts = (await getCollection("blog")).sort(
         text-decoration: underline;
       }
 
-      .blog-tags a {
+      .blog-tags a:hover {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -161,59 +174,52 @@ const posts = (await getCollection("blog")).sort(
     <Header />
     <ToggleTheme />
 
-    <main>
-      <section class="blog-list">
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <a href={`/blog/${post.id}/`}>
-                  <img
-                    width={720}
-                    height={360}
-                    src={post.data.heroImage}
-                    alt=""
-                  />
-                  <h4 class="blog-title">{post.data.title}</h4>
-                </a>
-                <p class="date-category">
-                  <FormattedDate date={post.data.pubDate} />
-                  {post.data.category && (
-                    <>
-                      <span class="separator"> | </span>
-                      <a
-                        href={`/blog/category/${post.data.category?.toLowerCase().replace(/\s+/g, "-")}`}
-                        class="blog-category"
-                      >
-                        {post.data.category}
-                      </a>
-                    </>
-                  )}
-                </p>
-
-                <p class="blog-tags">
-                  {post.data.tags?.length ? (
-                    post.data.tags.map((tag, index) => (
+    <div class="wrapper">
+      <main>
+        <section class="blog-list">
+          <ul>
+            {
+              posts.map((post) => (
+                <li>
+                  <a href={`/blog/${post.id}/`}>
+                    <img
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt=""
+                    />
+                    <h4 class="blog-title">{post.data.title}</h4>
+                  </a>
+                  <p class="date-category">
+                    <FormattedDate date={post.data.pubDate} />
+                    {post.data.category && (
                       <>
-                        <a
-                          href={`/blog/tag/${tag?.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          {tag}
-                        </a>
-                        {index < post.data.tags.length - 1 && " - "}
+                        <span class="separator"> | </span>
+                        {post.data.category}
                       </>
-                    ))
-                  ) : (
-                    <span>No tags available</span>
-                  )}
-                </p>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+                    )}
+                  </p>
+                  {/* <sub class="blog-tags">
+                    {post.data.tags?.length ? (
+                      post.data.tags.map((tag, index) => (
+                        <>
+                          {tag}
+                          {index < post.data.tags.length - 1 && " - "}
+                        </>
+                      ))
+                    ) : (
+                      <span>No tags available</span>
+                    )}
+                  </sub> */}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </main>
       <ToTop />
-    </main>
+    </div>
+
     <Footer />
   </body>
 </html>

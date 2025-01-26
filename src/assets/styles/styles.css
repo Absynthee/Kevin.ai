@@ -35,8 +35,8 @@ img {
 .carousel-view {
   .container.carousel {
     max-width: 1540px;
-    /* max-width: calc(90dvh - 350px);
-    min-width: 880px; */
+    /* max-width: calc(90dvh - 350px); */
+    /* min-width: 880px; */
   }
 
   .project-carousel-wrap {
@@ -410,13 +410,4 @@ img {
   height: 100%;
   position: absolute;
   inset: 0%;
-}
-
-.title {
-  line-height: 3rem;
-}
-
-.internal-links {
-  display: flex;
-  gap: 14rem;
 }

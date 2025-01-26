@@ -8,7 +8,6 @@ import Scripts from "../components/Scripts.astro";
 import ToggleTheme from "../components/ToggleTheme.astro";
 import ToTop from "../components/ToTop.astro";
 
-
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
@@ -17,7 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-	<Scripts />
+    <Scripts />
     <style>
       main {
         max-width: 1240px;
@@ -27,16 +26,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         margin: 0 auto;
         padding-bottom: 5rem;
       }
-	  .blog-post {
-		padding-inline: 2rem;
-	  }
+      .blog-post {
+        padding-inline: 2rem;
+      }
+
+      .backlink {
+        position: absolute;
+        padding: 1rem;
+      }
+
       .hero-image {
         width: 100%;
-		margin: 0 auto;
+        margin: 0 auto;
       }
       .hero-image img {
-		display: flex;
-		margin: auto;
+        display: flex;
+        margin: auto;
         border-radius: 12px;
         object-fit: cover;
         background-position: center;
@@ -63,50 +68,75 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       .last-updated-on {
         font-style: italic;
       }
-	  .blog-description {
-		font-size: 1.2rem;
-		font-style: italic;
-	  }
-	  p {
-		font-size: 1.1rem;
-		line-height: 1.5;
-	  }
+      .blog-description {
+        font-size: 1.2rem;
+        font-style: italic;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 820px) {
+
+        .blog-title h1 {
+          font-size: 3rem;
+        }
+        .blog-post {
+          padding-inline: 0rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .prose {
+          width: unset;
+          max-width: unset;
+        }
+        .blog-title h1 {
+          font-size: 2.6rem;
+        }
+      }
     </style>
   </head>
 
   <body>
     <Header />
-	<ToggleTheme />
-    <main>
-      <article class="blog-post">
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="blog-title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-			{description && <p class="blog-description">{description}</p>}
-            <hr />
+    <ToggleTheme />
+
+    <div class="wrapper">
+      <main>
+        <article class="blog-post">
+          <a class="backlink" href=".."><div class="circle-button">&lt;</div></a>
+          <div class="hero-image">
+            {
+              heroImage && (
+                <img width={1020} height={510} src={heroImage} alt="" />
+              )
+            }
           </div>
-          <slot />
-        </div>
-      </article>
-	  <ToTop />
-    </main>
+          <div class="prose">
+            <div class="blog-title">
+              <div class="date">
+                <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <h1>{title}</h1>
+              {description && <p class="blog-description">{description}</p>}
+              <hr />
+            </div>
+            <slot />
+          </div>
+        </article>
+      </main>
+      <ToTop />
+    </div>
+
     <Footer />
   </body>
 </html>
